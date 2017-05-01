@@ -11,10 +11,12 @@ gem 'jquery-rails'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.1'
 gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'slim'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
+gem 'httparty'
 
 group :production do
   gem 'rails_12factor'

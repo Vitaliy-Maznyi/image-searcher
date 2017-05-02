@@ -1,3 +1,15 @@
-| azazazaza
-= @image.id
-= image_tag(@image.urls.regular)
+.image-container
+  .image-block
+    = image_tag(@image.urls.regular)
+  .image-info
+    .info
+      | Height:
+      = @image.height
+      br
+      | Width:
+      = @image.width
+    .user
+      = image_tag(@image.user.profile_image.small)
+      = @image.user.name
+    .download
+      =link_to('Download', "#{@image.links.download}?force=true", class: 'btn btn-default' )

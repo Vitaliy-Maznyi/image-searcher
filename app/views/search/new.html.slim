@@ -1,5 +1,4 @@
-.new
-  .image-container
-    - @result.results.each do |result|
-      .image-block
-        = link_to(image_tag(result.urls.regular), search_path(result.id))
+.image-container
+  - @result.results.each do |result|
+    .image-block
+      = link_to(image_tag(result.urls.regular), search_path(result.id))

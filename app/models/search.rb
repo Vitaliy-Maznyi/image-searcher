@@ -5,7 +5,7 @@ class Search
   def self.search_by(query = '')
     get("/search/photos", {
         headers: {
-            "Authorization" => 'Client-ID b4c515bd9e6955548ad35672f4dbb177c5b469901adcb73445e3da9dfccaa4be'
+            "Authorization" => 'Client-ID ef9d6f296a30daeebb560a1c001b2d72d43bb04b9ecda9a3789f8d1aa0b6fce0'
         },
         query: query
     })
@@ -14,7 +14,7 @@ class Search
   def self.show_image(image = '')
     get("/photos/#{image[:id]}", {
         headers: {
-            "Authorization" => 'Client-ID b4c515bd9e6955548ad35672f4dbb177c5b469901adcb73445e3da9dfccaa4be'
+            "Authorization" => 'Client-ID ef9d6f296a30daeebb560a1c001b2d72d43bb04b9ecda9a3789f8d1aa0b6fce0'
         }
     })
   end

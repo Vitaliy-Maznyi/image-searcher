@@ -12,6 +12,11 @@ class SearchController < ApplicationController
   end
 
   def show
+    @response = Search.show_image(id: params[:id])
+    respond_to do |format|
+      format.html { @image = JSON.parse(@response.to_json, object_class: OpenStruct)}
+      format.json { render json: @response }
+    end
   end
 
 end

@@ -1,0 +1,5 @@
+.new
+  .image-container
+    - @result.results.each do |result|
+      .image-block
+        = image_tag result.urls.regular

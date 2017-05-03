@@ -5,18 +5,18 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.2'
+gem 'httparty'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'puma', '~> 3.0'
 gem 'rails', '~> 5.0.1'
 gem 'sass-rails', '~> 5.0'
-gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'slim'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
-gem 'httparty'
 
 group :production do
   gem 'rails_12factor'
@@ -26,6 +26,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', require: false
+  gem 'rubocop-rspec'
 end
 
 group :development do

@@ -2,9 +2,13 @@
   .search-container
     .search
       = simple_form_for :search,
-              method: :get,
-              url: new_search_path,
-              wrapper: :inline_form,
-              html: { class: 'form-inline' } do |f|
-        = f.input :query, as: :string
-        = f.button :submit, 'Search'
+        url: { action: 'index' },
+        wrapper: :inline_form,
+        html: { class: 'form-inline' },
+        method: :get do |f|
+        = f.input :query
+        = f.button :submit, 'Search photos'
+  .image-container
+    - @photos.each do |photo|
+      .image-block
+        = link_to(image_tag(photo.urls.regular), search_path(photo.id))

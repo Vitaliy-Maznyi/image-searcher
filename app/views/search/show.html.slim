@@ -1,15 +1,15 @@
 .image-container
   .image-block
-    = image_tag(@image.urls.regular)
+    = image_tag(@photo.urls.regular)
   .image-info
     .info
       | Height:
-      = @image.height
+      = @photo.height
       br
       | Width:
-      = @image.width
+      = @photo.width
     .user
-      = image_tag(@image.user.profile_image.small)
-      = @image.user.name
+      = image_tag(@photo.user.profile_image.small)
+      = @photo.user.name
     .download
-      =link_to('Download', "#{@image.links.download}?force=true", class: 'btn btn-default' )
+      =link_to('Download', "#{@photo.links.download}?force=true", class: 'btn btn-default' )

@@ -4,16 +4,16 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: url(bg.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  //background: url(bg.jpg) no-repeat center center fixed;
+  //-webkit-background-size: cover;
+  //-moz-background-size: cover;
+  //-o-background-size: cover;
+  //background-size: cover;
 }
 
 .search-container {
   position: absolute;
-  top: 50%;
+  top: 10%;
   transform: translate(50%, -50%);
   right: 50%;
   .search #search_query {
@@ -23,6 +23,7 @@
 .image-container {
   position: absolute;
   transform: translateX(50%);
+  top: 20%;
   right: 50%;
   margin-bottom: 10px;
   .image-block {

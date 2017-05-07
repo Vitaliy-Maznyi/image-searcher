@@ -1,21 +1,21 @@
 class SearchController < ApplicationController
   def index
-    @query = Search.new
-  end
-
-  def new
-    @query = Search.search_by(query: params[:search][:query])
-    respond_to do |format|
-      format.html { @result = JSON.parse(@query.to_json, object_class: OpenStruct) }
-      format.json { render json: @query }
+    if params[:search]
+      query = Search.search_by(query: params[:search][:query])
+      respond_to do |format|
+        format.html { @photos = JSON.parse(query['results'].to_json, object_class: OpenStruct) }
+        format.json { render json: query }
+      end
+    else
+      @photos = {}
     end
   end
 
   def show
-    @response = Search.show_image(id: params[:id])
+    query = Search.show_image(id: params[:id])
     respond_to do |format|
-      format.html { @image = JSON.parse(@response.to_json, object_class: OpenStruct) }
-      format.json { render json: @response }
+      format.html { @photo = JSON.parse(query.to_json, object_class: OpenStruct) }
+      format.json { render json: @query }
     end
   end
 end

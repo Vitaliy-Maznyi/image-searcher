@@ -14,12 +14,18 @@
       ul.nav.nav-tabs
         li.active
           a data-toggle="tab" href="#big_photos"
-            span.glyphicon.glyphicon-menu-hamburger
+            span.glyphicon.glyphicon-th-large
         li
           a data-toggle="tab" href="#small_photos"
-            span.glyphicon.glyphicon-th-large
+            span.glyphicon.glyphicon-menu-hamburger
       .tab-content
         #big_photos.tab-pane.fade.in.active
           = render "search/small_photos"
         #small_photos.tab-pane.fade
           = render "search/big_photos"
+      .pagination-block
+        ul.pagination
+          - (1..@photos.total_pages).each do |page|
+            li
+              = link_to search_index_path(search: {query: @photos.search}, page: page)
+                = page

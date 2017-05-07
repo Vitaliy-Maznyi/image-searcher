@@ -1,0 +1,3 @@
+- @photos.each do |photo|
+  .image-block
+    = link_to(image_tag(photo.urls.regular), search_path(photo.id))

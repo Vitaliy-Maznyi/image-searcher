@@ -1,0 +1,4 @@
+.image-block-flex
+  - @photos.each do |photo|
+    .image-items-flex
+      = link_to(image_tag(photo.urls.small), search_path(photo.id))

@@ -1,15 +1,15 @@
-.image-container
+.image-container-show
   .image-block
     = image_tag(@photo.urls.regular)
   .image-info
     .info
-      | Height:
-      = @photo.height
-      br
-      | Width:
+      span.glyphicon.glyphicon-resize-full
       = @photo.width
+      '  x
+      = @photo.height
+      | pixels
     .user
       = image_tag(@photo.user.profile_image.small)
-      = @photo.user.name
+      =  @photo.user.name
     .download
       =link_to('Download', "#{@photo.links.download}?force=true", class: 'btn btn-default' )

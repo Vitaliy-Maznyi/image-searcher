@@ -15,7 +15,7 @@ class SearchController < ApplicationController
     query = Search.show_image(id: params[:id])
     respond_to do |format|
       format.html { @photo = JSON.parse(query.to_json, object_class: OpenStruct) }
-      format.json { render json: @query }
+      format.json { render json: query }
     end
   end
 end

@@ -1,14 +1,24 @@
 .index
   .search-container
-    .search
-      = simple_form_for :search,
-        url: { action: 'index' },
-        wrapper: :inline_form,
-        html: { class: 'form-inline' },
-        method: :get do |f|
-        = f.input :query
-        = f.button :submit, 'Search photos'
+    .search-block
+      .search
+        = simple_form_for :search,
+          url: { action: 'index' },
+          wrapper: :inline_form,
+          html: { class: 'form-inline' },
+          method: :get do |f|
+          = f.input :query
+          = f.button :submit, 'Search photos', id: 'search_submit'
   .image-container
-    - @photos.each do |photo|
-      .image-block
-        = link_to(image_tag(photo.urls.regular), search_path(photo.id))
+    ul.nav.nav-tabs
+      li.active
+        a data-toggle="tab" href="#big_photos"
+          span.glyphicon.glyphicon-menu-hamburger
+      li
+        a data-toggle="tab" href="#small_photos"
+          span.glyphicon.glyphicon-th-large
+    .tab-content
+      #big_photos.tab-pane.fade.in.active
+        = render "search/small_photos"
+      #small_photos.tab-pane.fade
+        = render "search/big_photos"

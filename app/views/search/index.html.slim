@@ -9,7 +9,7 @@
           method: :get do |f|
           = f.input :query
           = f.button :submit, 'Search photos', id: 'search_submit'
-  - if @photos.present?
+  - if @photos.present? && @photos.results.present?
     .image-container
       ul.nav.nav-tabs
         li.active
